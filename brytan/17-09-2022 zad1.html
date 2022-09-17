@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+    explained and made with ❤ by kondziux1 and ziutek
+-->
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie1</title>
+    <script>
+        //funkcja którą woła przycisk aby obliczyć koszt wesela
+        function oblicz(){
+            //utworzenie skrótu (zmiennej[ang.variable]) do pola ilosc
+            var a = document.getElementById("ilosc").value;
+            //dlaczego nie ma (doc.getid("wybor").chcked === true)?
+            // BO KURWA PO CO????
+            //samo 3*równa się mnie rozjebało mamy sprawdzić czy wartość to true albo false
+            //a robiąc === sprawdzamy czy wartość to boolean jakby jak to niby ma działać lol
+            //nawet ta forma: if(document.getElementById("wybor").checked == true) nie jest potrzebna
+            //wystarczy to co ja dałem
+            //document.getElementById("wybor").checked to zmienna boolean
+            //czyli ona zwraca true lub false
+            //podczas wykonywania programu kompilator(program który czyta skrypt) widzi to if(true){execute}
+            //lub if(false){skip}else{execute}
+            //jak chcemy odwrócić to działanie dajemy "!" przed zmienną co zrobiłem w 2 zadaniu (nie potrzebnie zresztą)
+            if(document.getElementById("wybor").checked){
+                //obliczamy koszt bazując na 3% czy coś nwm
+                var koszt = a*100+0.3*(a*100);
+                //wypisujemy wartość
+                document.getElementById("result").innerHTML="Kosz twojego wesela to "+koszt+" złotych";
+            }
+            else{
+                //obliczamy koszt 100zł za gościa
+                var koszt = a*100;
+                //wypisujemy wartość
+                document.getElementById("result").innerHTML="Kosz twojego wesela to "+koszt+" złotych";
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <h2>Ile będzie kosztowało moje wesele</h2><br><br>
+    Podaj liczbę gości <input type="number" id="ilosc" value=""><br><br>
+    <input type="checkbox" id="wybor">Wesele z poprawinami?<br><br>
+    <input type="button" value="Oblicz koszt" onclick="oblicz()"><br><br>
+    <p id="result">0</p>
+</body>
+</html>

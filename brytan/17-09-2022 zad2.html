@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+    explained and made with ❤ by kondziux1 and ziutek
+-->
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie2</title>
+    <script>
+        //obliczanie ceny dostawy
+        function obliczdost(){
+            //utworzenie skrótu (zmiennej[ang.variable]) do pola ilosc
+            var ilosckm = document.getElementById("ilosc").value;
+            //sprawdza czy checkmark NIE jest zaznaczony
+            if(!document.getElementById("wybor").checked){
+                //mnożenie razy 2 bo 1km=1zł a jedziemy w 2 strony czyli razy2
+                document.getElementById("result").innerHTML = "Koszt twojej dostawy to " + ilosckm*2 + " złotych";
+            }else{
+                document.getElementById("result").innerHTML = "Dowieziemy pizze za free";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Oblicz kosz dostawy</h3><br><br>
+    <input type="checkbox" id="wybor">Jestem z Zielonej Góry<br>
+    <p>albo</p>
+    Podaj liczbę kilometrów z Zielonej Góry <input type="number" id="ilosc" value=""><br>
+    <input type="button" value="Oblicz" onclick="obliczdost()"><br>
+    <p id="result">Koszt twojej dostawy to 0 złotych</p>
+</body>
+</html>
